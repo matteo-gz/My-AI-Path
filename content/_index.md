@@ -1,0 +1,4 @@
+---
+title: book
+type: docs
+---
