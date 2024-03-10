@@ -31,7 +31,7 @@ AI的应用范围非常的广泛
 
 ## 目前使用资料
   - https://course.fast.ai/
-  - a book: Deep Learning for Coders with Fastai and PyTorch: AI Applications Without a PhD
+  - https://github.com/fastai/fastbook a book: Deep Learning for Coders with Fastai and PyTorch: AI Applications Without a PhD
   - https://www.kaggle.com/jhoward 这个是文中的代码来源.
 
 ## AI的特征
@@ -44,6 +44,12 @@ AI的应用范围非常的广泛
   - 纯英文输入法
   - python基础
   - NVIDIA显卡
+
+文中老师推荐使用云产品即可,且代码并不是第一位.
+
+随着AI的发展,代码迭代地更加快速.
+
+使用一个版本的代码后切到另一个版本的代码只需要几天时间适应.
 
 ## 自学前提
   - 中学水平的数学
