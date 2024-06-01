@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="学习路线 # https://course.fast.ai/ 适合编程人员课程 学习目的 # AI的应用范围非常的广泛
+Natural language processing(NLP) 语音识别 总结文件 文件分类 文件查找根据姓名,日期 搜索提及某个概念的文章 Computer vision(计算机视觉) 自动驾驶 医药 生物学 图片生成 推荐系统,电影过滤 玩游戏,围棋 机器人优化,难以拾取的物体 其他 财务 物流 文本转语音 目前使用资料 # https://course.fast.ai/ 课程 https://github.com/fastai/fastbook a book: Deep Learning for Coders with Fastai and PyTorch: AI Applications Without a PhD https://www.kaggle.com/jhoward 这个是文中的代码来源. https://aiquizzes.com/learn 问答学习网站 第一节课 # https://forums.fast.ai/c/p1v5/54 2022年课程论坛 https://forums.fast.ai/t/lesson-1-official-topic/95287 第一节课的主题 https://forums.fast.ai/t/fastbook-chapter-1-questionnaire-solutions-wiki/65647 第一节的问答 AI的特征 # 自学,通过任意的神经网络,我们不需要自己去手写代码 通过基础的功能组合成更高级的功能 本地编程建议 # 稳定通畅的网络 linux环境 纯英文输入法 python基础 NVIDIA显卡 文中老师推荐使用云产品即可,且代码并不是第一位.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="前言" />
+<meta property="og:description" content="学习路线 # https://course.fast.ai/ 适合编程人员课程 学习目的 # AI的应用范围非常的广泛
+Natural language processing(NLP) 语音识别 总结文件 文件分类 文件查找根据姓名,日期 搜索提及某个概念的文章 Computer vision(计算机视觉) 自动驾驶 医药 生物学 图片生成 推荐系统,电影过滤 玩游戏,围棋 机器人优化,难以拾取的物体 其他 财务 物流 文本转语音 目前使用资料 # https://course.fast.ai/ 课程 https://github.com/fastai/fastbook a book: Deep Learning for Coders with Fastai and PyTorch: AI Applications Without a PhD https://www.kaggle.com/jhoward 这个是文中的代码来源. https://aiquizzes.com/learn 问答学习网站 第一节课 # https://forums.fast.ai/c/p1v5/54 2022年课程论坛 https://forums.fast.ai/t/lesson-1-official-topic/95287 第一节课的主题 https://forums.fast.ai/t/fastbook-chapter-1-questionnaire-solutions-wiki/65647 第一节的问答 AI的特征 # 自学,通过任意的神经网络,我们不需要自己去手写代码 通过基础的功能组合成更高级的功能 本地编程建议 # 稳定通畅的网络 linux环境 纯英文输入法 python基础 NVIDIA显卡 文中老师推荐使用云产品即可,且代码并不是第一位." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://matteo-gz.github.io/ai/docs/basic/start/" /><meta property="article:section" content="docs" />
+
+
+<title>前言 | ai</title>
+<link rel="manifest" href="/ai/manifest.json">
+<link rel="icon" href="/ai/favicon.png" >
+<link rel="canonical" href="https://matteo-gz.github.io/ai/docs/basic/start/">
+<link rel="stylesheet" href="/ai/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/ai/flexsearch.min.js"></script>
+  <script defer src="/ai/en.search.min.aa869e2ccceced134cfa0e8ce89aa48f50c40cd89a4a79c4250e3113b837ffc3.js" integrity="sha256-qoaeLMzs7RNM&#43;g6M6Jqkj1DEDNiaSnnEJQ4xE7g3/8M=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/ai/"><span>ai</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>入门</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/start/" class="active">前言</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/machine-learning/" class="">机器学习</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/deep-learning/" class="">深度学习</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/production/" class="">生产</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/neural-network/" class="">神经网络</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/bird-model/" class="">辨别鸟类模型</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/ai/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>前言</strong>
+
+  <label for="toc-control">
+    
+    <img src="/ai/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#学习路线">学习路线</a></li>
+    <li><a href="#学习目的">学习目的</a></li>
+    <li><a href="#目前使用资料">目前使用资料</a>
+      <ul>
+        <li><a href="#第一节课">第一节课</a></li>
+      </ul>
+    </li>
+    <li><a href="#ai的特征">AI的特征</a></li>
+    <li><a href="#本地编程建议">本地编程建议</a></li>
+    <li><a href="#自学前提">自学前提</a>
+      <ul>
+        <li><a href="#关于pytorch">关于Pytorch</a></li>
+      </ul>
+    </li>
+    <li><a href="#准备工作">准备工作</a>
+      <ul>
+        <li><a href="#关于jupyter">关于Jupyter</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="学习路线">
+  学习路线
+  <a class="anchor" href="#%e5%ad%a6%e4%b9%a0%e8%b7%af%e7%ba%bf">#</a>
+</h2>
+<ul>
+<li><a href="https://course.fast.ai/">https://course.fast.ai/</a> 适合编程人员课程</li>
+</ul>
+<h2 id="学习目的">
+  学习目的
+  <a class="anchor" href="#%e5%ad%a6%e4%b9%a0%e7%9b%ae%e7%9a%84">#</a>
+</h2>
+<p>AI的应用范围非常的广泛</p>
+<ul>
+<li>Natural language processing(NLP)
+<ul>
+<li>语音识别</li>
+<li>总结文件</li>
+<li>文件分类</li>
+<li>文件查找根据姓名,日期</li>
+<li>搜索提及某个概念的文章</li>
+</ul>
+</li>
+<li>Computer vision(计算机视觉)
+<ul>
+<li>自动驾驶</li>
+</ul>
+</li>
+<li>医药</li>
+<li>生物学</li>
+<li>图片生成</li>
+<li>推荐系统,电影过滤</li>
+<li>玩游戏,围棋</li>
+<li>机器人优化,难以拾取的物体</li>
+<li>其他
+<ul>
+<li>财务</li>
+<li>物流</li>
+<li>文本转语音</li>
+</ul>
+</li>
+</ul>
+<h2 id="目前使用资料">
+  目前使用资料
+  <a class="anchor" href="#%e7%9b%ae%e5%89%8d%e4%bd%bf%e7%94%a8%e8%b5%84%e6%96%99">#</a>
+</h2>
+<ul>
+<li><a href="https://course.fast.ai/">https://course.fast.ai/</a> 课程</li>
+<li><a href="https://github.com/fastai/fastbook">https://github.com/fastai/fastbook</a> a book: Deep Learning for Coders with Fastai and PyTorch: AI Applications Without a PhD</li>
+<li><a href="https://www.kaggle.com/jhoward">https://www.kaggle.com/jhoward</a> 这个是文中的代码来源.</li>
+<li><a href="https://aiquizzes.com/learn">https://aiquizzes.com/learn</a> 问答学习网站</li>
+</ul>
+<h3 id="第一节课">
+  第一节课
+  <a class="anchor" href="#%e7%ac%ac%e4%b8%80%e8%8a%82%e8%af%be">#</a>
+</h3>
+<ul>
+<li><a href="https://forums.fast.ai/c/p1v5/54">https://forums.fast.ai/c/p1v5/54</a> 2022年课程论坛</li>
+<li><a href="https://forums.fast.ai/t/lesson-1-official-topic/95287">https://forums.fast.ai/t/lesson-1-official-topic/95287</a> 第一节课的主题</li>
+<li><a href="https://forums.fast.ai/t/fastbook-chapter-1-questionnaire-solutions-wiki/65647">https://forums.fast.ai/t/fastbook-chapter-1-questionnaire-solutions-wiki/65647</a> 第一节的问答</li>
+</ul>
+<h2 id="ai的特征">
+  AI的特征
+  <a class="anchor" href="#ai%e7%9a%84%e7%89%b9%e5%be%81">#</a>
+</h2>
+<ul>
+<li>自学,通过任意的神经网络,我们不需要自己去手写代码</li>
+<li>通过基础的功能组合成更高级的功能</li>
+</ul>
+<h2 id="本地编程建议">
+  本地编程建议
+  <a class="anchor" href="#%e6%9c%ac%e5%9c%b0%e7%bc%96%e7%a8%8b%e5%bb%ba%e8%ae%ae">#</a>
+</h2>
+<ul>
+<li>稳定通畅的网络</li>
+<li>linux环境</li>
+<li>纯英文输入法</li>
+<li>python基础</li>
+<li>NVIDIA显卡</li>
+</ul>
+<p>文中老师推荐使用云产品即可,且代码并不是第一位.</p>
+<p>随着AI的发展,代码迭代地更加快速.</p>
+<p>使用一个版本的代码后切到另一个版本的代码只需要几天时间适应.</p>
+<h2 id="自学前提">
+  自学前提
+  <a class="anchor" href="#%e8%87%aa%e5%ad%a6%e5%89%8d%e6%8f%90">#</a>
+</h2>
+<ul>
+<li>中学水平的数学</li>
+<li>小于50项的数据准备</li>
+<li>普通的笔记本</li>
+<li>Pytorch;很多顶级的paper中有在用它.(TensorFlow呈现出下降的趋势)</li>
+</ul>
+<h3 id="关于pytorch">
+  关于Pytorch
+  <a class="anchor" href="#%e5%85%b3%e4%ba%8epytorch">#</a>
+</h3>
+<p>Pytorch是一个AI库,但是fast.ai也有一个库是基于纯Pytorch代码的封装,
+代码写的越少,更少出错,fast.ai库来保证代码的最佳实践获取最佳的性能.</p>
+<h2 id="准备工作">
+  准备工作
+  <a class="anchor" href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c">#</a>
+</h2>
+<ul>
+<li>Jupyter notebook on kaggle</li>
+</ul>
+<h3 id="关于jupyter">
+  关于Jupyter
+  <a class="anchor" href="#%e5%85%b3%e4%ba%8ejupyter">#</a>
+</h3>
+<p>Jupyter是一个基于web运行的python解释器 + 笔记,而Jupyter notebook可以运行在本地电脑,当然也有云产品,类似
+colab和kaggle,但是推荐kaggle,因为他有竞赛模式,类似leetcode那般.</p>
+<p>kaggl中,其中一个名为 &ldquo;Jupyter notebook 101&rdquo; <a href="https://www.kaggle.com/code/jhoward/jupyter-notebook-101">https://www.kaggle.com/code/jhoward/jupyter-notebook-101</a> 是一个不错的入门case.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#学习路线">学习路线</a></li>
+    <li><a href="#学习目的">学习目的</a></li>
+    <li><a href="#目前使用资料">目前使用资料</a>
+      <ul>
+        <li><a href="#第一节课">第一节课</a></li>
+      </ul>
+    </li>
+    <li><a href="#ai的特征">AI的特征</a></li>
+    <li><a href="#本地编程建议">本地编程建议</a></li>
+    <li><a href="#自学前提">自学前提</a>
+      <ul>
+        <li><a href="#关于pytorch">关于Pytorch</a></li>
+      </ul>
+    </li>
+    <li><a href="#准备工作">准备工作</a>
+      <ul>
+        <li><a href="#关于jupyter">关于Jupyter</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

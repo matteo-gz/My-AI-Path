@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="术语 # 模型(Model)的功能形式称为其架构(architecture) 权重(weights)称为参数(parameters) 预测(predictions)是根据自变量计算的，自变量是不包括标签(labels)的数据 模型的结果称为预测。 性能的衡量标准称为损失(loss)。 损失不仅取决于预测，还取决于正确的标签（也称为目标或因变量）；例如，“狗”或“猫”。 for{ predictions=architecture(inputs,parameters) parameters=loss(predictions,labels) } 没有数据就无法创建模型。 模型可以学习仅对用于训练它的输入数据中看到的模式进行操作。 这种学习方法仅创建预测，而不创建建议的actions。 仅仅有输入数据的示例是不够的；我们还需要这些数据的标签（例如，狗和猫的图片不足以训练模型；我们需要为每个数据添加一个标签，说明哪些是狗，哪些是猫）。 过度拟合 # over-fitting
+如果你训练足够大的模型足够长的时间，它最终会记住数据集中每个项目的标签！结果不会是一个有用的模型，因为我们关心的是我们的模型在以前未见过的图像上的表现如何。这始终是我们创建模型时的目标：让它对模型训练后仅在未来看到的数据有用。
+即使您的模型没有完全记住所有数据，在训练的早期，它也可能已经记住了其中的某些部分。因此，你训练的时间越长，你的准确性就越高. 您在训练集上的准确性就越高；验证集的准确性也会暂时提高，但最终会开始变得更糟，因为模型开始记住训练集而不是在数据中寻找可概括的基础模式。当这种情况发生时，我们说 模型过度拟合
+卷积神经网络 # CNN 创建计算机视觉模型.他们的结构受到人类视觉系统工作原理的启发。
+ResNet # resnet34,34 代表网络中包含 34 个可训练层.
+层数越多，神经网络的拟合能力越强，可以学习到更复杂的特征。但是，层数越多也容易导致过拟合问题，同时也会增加训练难度，使模型难以收敛。
+层数越少，神经网络的拟合能力越弱，可能无法学习到足够的特征。但是，层数越少也越不容易过拟合，训练难度也越小。
+过拟合是指模型在训练集上表现良好，但在测试集上表现较差.
+欠拟合是指模型在训练集和测试集上都表现不佳.
+metric # 指标
+error_rate 错误率 accuracy 准备率;accuracy= 1-error_rate;accuracy &#43; error_rate = 1 loss # 损失 定义训练系统可以用来自动更新权重的&quot;性能衡量标准&quot;
+预训练模型 # 使用预训练模型时,删除最后一层,因为它始终是针对原始模型专门定制的. 并将其替换为具有随机权重的一个或多个新层,其大小适合我们正在使用的数据集. 模型的最后一部分称为头部.
+将预训练模型用于不同于最初训练目的的任务称为迁移学习.
+epochs # epoch表示将整个训练集通过一次的学习过程.
+fine-tuning # 微调 一种迁移学习技术，通过使用与预训练不同的任务进行额外的训练来更新预训练模型的参数。">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="深度学习" />
+<meta property="og:description" content="术语 # 模型(Model)的功能形式称为其架构(architecture) 权重(weights)称为参数(parameters) 预测(predictions)是根据自变量计算的，自变量是不包括标签(labels)的数据 模型的结果称为预测。 性能的衡量标准称为损失(loss)。 损失不仅取决于预测，还取决于正确的标签（也称为目标或因变量）；例如，“狗”或“猫”。 for{ predictions=architecture(inputs,parameters) parameters=loss(predictions,labels) } 没有数据就无法创建模型。 模型可以学习仅对用于训练它的输入数据中看到的模式进行操作。 这种学习方法仅创建预测，而不创建建议的actions。 仅仅有输入数据的示例是不够的；我们还需要这些数据的标签（例如，狗和猫的图片不足以训练模型；我们需要为每个数据添加一个标签，说明哪些是狗，哪些是猫）。 过度拟合 # over-fitting
+如果你训练足够大的模型足够长的时间，它最终会记住数据集中每个项目的标签！结果不会是一个有用的模型，因为我们关心的是我们的模型在以前未见过的图像上的表现如何。这始终是我们创建模型时的目标：让它对模型训练后仅在未来看到的数据有用。
+即使您的模型没有完全记住所有数据，在训练的早期，它也可能已经记住了其中的某些部分。因此，你训练的时间越长，你的准确性就越高. 您在训练集上的准确性就越高；验证集的准确性也会暂时提高，但最终会开始变得更糟，因为模型开始记住训练集而不是在数据中寻找可概括的基础模式。当这种情况发生时，我们说 模型过度拟合
+卷积神经网络 # CNN 创建计算机视觉模型.他们的结构受到人类视觉系统工作原理的启发。
+ResNet # resnet34,34 代表网络中包含 34 个可训练层.
+层数越多，神经网络的拟合能力越强，可以学习到更复杂的特征。但是，层数越多也容易导致过拟合问题，同时也会增加训练难度，使模型难以收敛。
+层数越少，神经网络的拟合能力越弱，可能无法学习到足够的特征。但是，层数越少也越不容易过拟合，训练难度也越小。
+过拟合是指模型在训练集上表现良好，但在测试集上表现较差.
+欠拟合是指模型在训练集和测试集上都表现不佳.
+metric # 指标
+error_rate 错误率 accuracy 准备率;accuracy= 1-error_rate;accuracy &#43; error_rate = 1 loss # 损失 定义训练系统可以用来自动更新权重的&quot;性能衡量标准&quot;
+预训练模型 # 使用预训练模型时,删除最后一层,因为它始终是针对原始模型专门定制的. 并将其替换为具有随机权重的一个或多个新层,其大小适合我们正在使用的数据集. 模型的最后一部分称为头部.
+将预训练模型用于不同于最初训练目的的任务称为迁移学习.
+epochs # epoch表示将整个训练集通过一次的学习过程.
+fine-tuning # 微调 一种迁移学习技术，通过使用与预训练不同的任务进行额外的训练来更新预训练模型的参数。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://matteo-gz.github.io/ai/docs/basic/deep-learning/" /><meta property="article:section" content="docs" />
+
+
+<title>深度学习 | ai</title>
+<link rel="manifest" href="/ai/manifest.json">
+<link rel="icon" href="/ai/favicon.png" >
+<link rel="canonical" href="https://matteo-gz.github.io/ai/docs/basic/deep-learning/">
+<link rel="stylesheet" href="/ai/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/ai/flexsearch.min.js"></script>
+  <script defer src="/ai/en.search.min.aa869e2ccceced134cfa0e8ce89aa48f50c40cd89a4a79c4250e3113b837ffc3.js" integrity="sha256-qoaeLMzs7RNM&#43;g6M6Jqkj1DEDNiaSnnEJQ4xE7g3/8M=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/ai/"><span>ai</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>入门</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/start/" class="">前言</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/machine-learning/" class="">机器学习</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/deep-learning/" class="active">深度学习</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/production/" class="">生产</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/neural-network/" class="">神经网络</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/ai/docs/basic/bird-model/" class="">辨别鸟类模型</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/ai/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>深度学习</strong>
+
+  <label for="toc-control">
+    
+    <img src="/ai/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#术语">术语</a></li>
+    <li><a href="#过度拟合">过度拟合</a></li>
+    <li><a href="#卷积神经网络">卷积神经网络</a></li>
+    <li><a href="#resnet">ResNet</a></li>
+    <li><a href="#metric">metric</a></li>
+    <li><a href="#loss">loss</a></li>
+    <li><a href="#预训练模型">预训练模型</a></li>
+    <li><a href="#epochs">epochs</a></li>
+    <li><a href="#fine-tuning">fine-tuning</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="术语">
+  术语
+  <a class="anchor" href="#%e6%9c%af%e8%af%ad">#</a>
+</h2>
+<ul>
+<li>模型(Model)的功能形式称为其架构(architecture)</li>
+<li>权重(weights)称为参数(parameters)</li>
+<li>预测(predictions)是根据自变量计算的，自变量是不包括标签(labels)的数据</li>
+<li>模型的结果称为预测。</li>
+<li>性能的衡量标准称为损失(loss)。</li>
+<li>损失不仅取决于预测，还取决于正确的标签（也称为目标或因变量）；例如，“狗”或“猫”。</li>
+</ul>
+<pre tabindex="0"><code>for{
+    predictions=architecture(inputs,parameters)
+    parameters=loss(predictions,labels)
+}
+</code></pre><ul>
+<li>没有数据就无法创建模型。</li>
+<li>模型可以学习仅对用于训练它的输入数据中看到的模式进行操作。</li>
+<li>这种学习方法仅创建预测，而不创建建议的actions。</li>
+<li>仅仅有输入数据的示例是不够的；我们还需要这些数据的标签（例如，狗和猫的图片不足以训练模型；我们需要为每个数据添加一个标签，说明哪些是狗，哪些是猫）。</li>
+</ul>
+<h2 id="过度拟合">
+  过度拟合
+  <a class="anchor" href="#%e8%bf%87%e5%ba%a6%e6%8b%9f%e5%90%88">#</a>
+</h2>
+<p>over-fitting</p>
+<blockquote>
+<p>如果你训练足够大的模型足够长的时间，它最终会记住数据集中每个项目的标签！结果不会是一个有用的模型，因为我们关心的是我们的模型在以前未见过的图像上的表现如何。这始终是我们创建模型时的目标：让它对模型训练后仅在未来看到的数据有用。</p>
+</blockquote>
+<blockquote>
+<p>即使您的模型没有完全记住所有数据，在训练的早期，它也可能已经记住了其中的某些部分。因此，你训练的时间越长，你的准确性就越高.
+您在训练集上的准确性就越高；验证集的准确性也会暂时提高，但最终会开始变得更糟，因为模型开始记住训练集而不是在数据中寻找可概括的基础模式。当这种情况发生时，我们说
+模型过度拟合</p>
+</blockquote>
+<h2 id="卷积神经网络">
+  卷积神经网络
+  <a class="anchor" href="#%e5%8d%b7%e7%a7%af%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c">#</a>
+</h2>
+<p>CNN 创建计算机视觉模型.他们的结构受到人类视觉系统工作原理的启发。</p>
+<h2 id="resnet">
+  ResNet
+  <a class="anchor" href="#resnet">#</a>
+</h2>
+<p>resnet34,34 代表网络中包含 34 个可训练层.</p>
+<p>层数越多，神经网络的拟合能力越强，可以学习到更复杂的特征。但是，层数越多也容易导致过拟合问题，同时也会增加训练难度，使模型难以收敛。</p>
+<p>层数越少，神经网络的拟合能力越弱，可能无法学习到足够的特征。但是，层数越少也越不容易过拟合，训练难度也越小。</p>
+<p><strong>过拟合</strong>是指模型在训练集上表现良好，但在测试集上表现较差.</p>
+<p><strong>欠拟合</strong>是指模型在<strong>训练集</strong>和<strong>测试集</strong>上都表现不佳.</p>
+<h2 id="metric">
+  metric
+  <a class="anchor" href="#metric">#</a>
+</h2>
+<p>指标</p>
+<ul>
+<li>error_rate 错误率</li>
+<li>accuracy  准备率;accuracy= 1-error_rate;accuracy + error_rate = 1</li>
+</ul>
+<h2 id="loss">
+  loss
+  <a class="anchor" href="#loss">#</a>
+</h2>
+<p>损失 定义训练系统可以用来自动更新权重的&quot;性能衡量标准&quot;</p>
+<h2 id="预训练模型">
+  预训练模型
+  <a class="anchor" href="#%e9%a2%84%e8%ae%ad%e7%bb%83%e6%a8%a1%e5%9e%8b">#</a>
+</h2>
+<p>使用预训练模型时,<strong>删除最后一层</strong>,因为它始终是针对原始模型专门定制的.
+并将其替换为具有随机权重的一个或多个新层,其大小适合我们正在使用的数据集.
+模型的最后一部分称为<strong>头部</strong>.</p>
+<p>将预训练模型用于不同于最初训练目的的任务称为<strong>迁移学习</strong>.</p>
+<h2 id="epochs">
+  epochs
+  <a class="anchor" href="#epochs">#</a>
+</h2>
+<p>epoch表示将整个训练集通过一次的学习过程.</p>
+<h2 id="fine-tuning">
+  fine-tuning
+  <a class="anchor" href="#fine-tuning">#</a>
+</h2>
+<p>微调
+一种迁移学习技术，通过使用与预训练不同的任务进行额外的训练来更新预训练模型的参数。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#术语">术语</a></li>
+    <li><a href="#过度拟合">过度拟合</a></li>
+    <li><a href="#卷积神经网络">卷积神经网络</a></li>
+    <li><a href="#resnet">ResNet</a></li>
+    <li><a href="#metric">metric</a></li>
+    <li><a href="#loss">loss</a></li>
+    <li><a href="#预训练模型">预训练模型</a></li>
+    <li><a href="#epochs">epochs</a></li>
+    <li><a href="#fine-tuning">fine-tuning</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

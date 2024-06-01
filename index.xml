@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ai</title>
+    <link>https://matteo-gz.github.io/ai/</link>
+    <description>Recent content on ai</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://matteo-gz.github.io/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前言</title>
+      <link>https://matteo-gz.github.io/ai/docs/basic/start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://matteo-gz.github.io/ai/docs/basic/start/</guid>
+      <description>学习路线 # https://course.fast.ai/ 适合编程人员课程 学习目的 # AI的应用范围非常的广泛
+Natural language processing(NLP) 语音识别 总结文件 文件分类 文件查找根据姓名,日期 搜索提及某个概念的文章 Computer vision(计算机视觉) 自动驾驶 医药 生物学 图片生成 推荐系统,电影过滤 玩游戏,围棋 机器人优化,难以拾取的物体 其他 财务 物流 文本转语音 目前使用资料 # https://course.fast.ai/ 课程 https://github.com/fastai/fastbook a book: Deep Learning for Coders with Fastai and PyTorch: AI Applications Without a PhD https://www.kaggle.com/jhoward 这个是文中的代码来源. https://aiquizzes.com/learn 问答学习网站 第一节课 # https://forums.fast.ai/c/p1v5/54 2022年课程论坛 https://forums.fast.ai/t/lesson-1-official-topic/95287 第一节课的主题 https://forums.fast.ai/t/fastbook-chapter-1-questionnaire-solutions-wiki/65647 第一节的问答 AI的特征 # 自学,通过任意的神经网络,我们不需要自己去手写代码 通过基础的功能组合成更高级的功能 本地编程建议 # 稳定通畅的网络 linux环境 纯英文输入法 python基础 NVIDIA显卡 文中老师推荐使用云产品即可,且代码并不是第一位.</description>
+    </item>
+    
+    <item>
+      <title>机器学习</title>
+      <link>https://matteo-gz.github.io/ai/docs/basic/machine-learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://matteo-gz.github.io/ai/docs/basic/machine-learning/</guid>
+      <description> 机器学习 # 通过允许计算机从其经验中学习而不是通过手动编码各个步骤来开发程序的训练。
+不要告诉计算机解决问题所需的确切步骤，而是向计算机展示要解决的问题的示例， 并让它自己弄清楚如何解决它。事实证明，这非常有效.
+假设我们安排一些自动方法来测试任何当前权重分配在实际性能方面的有效性，并提供一种改变权重分配的机制，以便最大化性能。我们不需要深入研究这样一个过程的细节，就可以看到它可以完全自动化，并看到这样编程的机器可以从其经验中“学习”。
+results=Model(inputs,weights) for { results=Model(inputs,weights) weights=performance(result) } results=Model(inputs) </description>
+    </item>
+    
+    <item>
+      <title>深度学习</title>
+      <link>https://matteo-gz.github.io/ai/docs/basic/deep-learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://matteo-gz.github.io/ai/docs/basic/deep-learning/</guid>
+      <description>术语 # 模型(Model)的功能形式称为其架构(architecture) 权重(weights)称为参数(parameters) 预测(predictions)是根据自变量计算的，自变量是不包括标签(labels)的数据 模型的结果称为预测。 性能的衡量标准称为损失(loss)。 损失不仅取决于预测，还取决于正确的标签（也称为目标或因变量）；例如，“狗”或“猫”。 for{ predictions=architecture(inputs,parameters) parameters=loss(predictions,labels) } 没有数据就无法创建模型。 模型可以学习仅对用于训练它的输入数据中看到的模式进行操作。 这种学习方法仅创建预测，而不创建建议的actions。 仅仅有输入数据的示例是不够的；我们还需要这些数据的标签（例如，狗和猫的图片不足以训练模型；我们需要为每个数据添加一个标签，说明哪些是狗，哪些是猫）。 过度拟合 # over-fitting
+如果你训练足够大的模型足够长的时间，它最终会记住数据集中每个项目的标签！结果不会是一个有用的模型，因为我们关心的是我们的模型在以前未见过的图像上的表现如何。这始终是我们创建模型时的目标：让它对模型训练后仅在未来看到的数据有用。
+即使您的模型没有完全记住所有数据，在训练的早期，它也可能已经记住了其中的某些部分。因此，你训练的时间越长，你的准确性就越高. 您在训练集上的准确性就越高；验证集的准确性也会暂时提高，但最终会开始变得更糟，因为模型开始记住训练集而不是在数据中寻找可概括的基础模式。当这种情况发生时，我们说 模型过度拟合
+卷积神经网络 # CNN 创建计算机视觉模型.他们的结构受到人类视觉系统工作原理的启发。
+ResNet # resnet34,34 代表网络中包含 34 个可训练层.
+层数越多，神经网络的拟合能力越强，可以学习到更复杂的特征。但是，层数越多也容易导致过拟合问题，同时也会增加训练难度，使模型难以收敛。
+层数越少，神经网络的拟合能力越弱，可能无法学习到足够的特征。但是，层数越少也越不容易过拟合，训练难度也越小。
+过拟合是指模型在训练集上表现良好，但在测试集上表现较差.
+欠拟合是指模型在训练集和测试集上都表现不佳.
+metric # 指标
+error_rate 错误率 accuracy 准备率;accuracy= 1-error_rate;accuracy + error_rate = 1 loss # 损失 定义训练系统可以用来自动更新权重的&amp;quot;性能衡量标准&amp;quot;
+预训练模型 # 使用预训练模型时,删除最后一层,因为它始终是针对原始模型专门定制的. 并将其替换为具有随机权重的一个或多个新层,其大小适合我们正在使用的数据集. 模型的最后一部分称为头部.
+将预训练模型用于不同于最初训练目的的任务称为迁移学习.
+epochs # epoch表示将整个训练集通过一次的学习过程.
+fine-tuning # 微调 一种迁移学习技术，通过使用与预训练不同的任务进行额外的训练来更新预训练模型的参数。</description>
+    </item>
+    
+    <item>
+      <title>生产</title>
+      <link>https://matteo-gz.github.io/ai/docs/basic/production/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://matteo-gz.github.io/ai/docs/basic/production/</guid>
+      <description>领域与模型 # 计算机视觉 # object recognition(对象识别);给定一个图像,识别图像中包含的对象类别 object detection (对象检测);给定一个图像,需要同时检测图像中包含的对象并绘制边界框 segmentation(分割);给定一个图像,需要对图像进行像素级分类或分区,将图像分割成各个有意义的区域 checking for out-of-domain data(检测外域数据)是一种机器学习模型监测技术,目的是为了监测模型是否会因为面对未知的数据结构而产生误导或异常结果。
+data augmentation(数据增强)通过对原始训练数据集进行某些随机变换取得新的训练样本,来扩充原始数据集的规模,并让模型学习到更强大的泛化能力.
+文本 # 垃圾邮件标记 情绪积极消极判断 作者,网站分类 文档分类 结合context回复,模仿风格 翻译 文本与图像 # 图像输入转换标题文本输出 表格数据 # 时序与表格分析
+算法
+random forests 随机森林 gradient boosting machine 梯度提升机 推荐系统 # 推荐系统视为表格数据的特定类型.
+缺点: 猜测用户可能喜欢哪些产品,但是推荐是否有用于客户不可确定. 用户已经买了电脑,推荐同类型电脑似乎作用不大.
+其他类型 # 蛋白质链 类似 NLP文档; 声音 -&amp;gt; 频谱图 -&amp;gt; 图像 Drivetrain approach # 一种机器学习模型构建方法
+步骤
+Defined objective (确定目标) Levers(转化输入手段) Data(确定能提供帮助数据) Models(确定模型实施方案) google search举例
+用户查询的目的是? 显示最相关的搜索结果 可以采取的杠杠?</description>
+    </item>
+    
+    <item>
+      <title>神经网络</title>
+      <link>https://matteo-gz.github.io/ai/docs/basic/neural-network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://matteo-gz.github.io/ai/docs/basic/neural-network/</guid>
+      <description>历史 # 1943年,神经生理学家 Warren McCulloch和 逻辑学家 Walter Pitts开发了人工神经元的数学模型.
+https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf
+随机梯度下降 # 随机梯度下降(stochastic gradient descent)
+找到一种新的&amp;rsquo;机制&amp;rsquo;来自动更新每个问题的权重.完全通用的方法来更新神经网络的权重,以使其在任何给定任务上得到改进.</description>
+    </item>
+    
+    <item>
+      <title>辨别鸟类模型</title>
+      <link>https://matteo-gz.github.io/ai/docs/basic/bird-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://matteo-gz.github.io/ai/docs/basic/bird-model/</guid>
+      <description>实践来源 # https://www.kaggle.com/code/jhoward/is-it-a-bird-creating-a-model-from-your-own-data
+在过去识别一个照片中是否有鸟类,需要一个研究团和5年的时间(一个梗图).
+前置工作 # fastai库 pip install -Uqq fastai
+确保更新,减少兼容性问题
+名词解释 # Fine-tune ↕ Fine-tune 是一个英文单词，意思是 微调。在机器学习领域，fine-tune 指的是对已经训练好的模型进行进一步调整，以使其在新的任务上表现更好。 Pretrained ↕ Pretrained 是一个英文单词，意思是 预训练。在机器学习领域，pretrained 指的是使用一个模型在大量数据上进行训练，然后将训练好的模型参数作为另一个模型的初始化参数。 关于data block # 数据块与模型的关联上(数据如何进入我们的模型),在此处的探讨上. 我们似乎跳过了 neural network(神经网络), matrix multiplication(矩阵相乘),gradients(梯度).
+但是在实践过程中深度学习社区已经找到了相当小量的模型类型,几乎满足我们的构建需求.
+fast.ai库为我们构建正确类型的模型.
+数据块设计 # 在数百个项目中,为了使数据达到正确的形状,每个项目进行了哪些更改.
+概念 # training set 训练集(用于创建模型的图像) validation set 验证集(在训练期间不使用) 数据集定义 # dls = DataBlock( blocks=(ImageBlock, CategoryBlock), get_items=get_image_files, splitter=RandomSplitter(valid_pct=0.2, seed=42), get_y=parent_label, item_tfms=[Resize(192, method=&amp;#39;squish&amp;#39;)] ).dataloaders(path, bs=32) 数据块 我们有什么样的输入? &amp;ndash; 图像 有什么样的输出? &amp;ndash; 类别 (bird or forest) 那么这个模型中有哪些物品呢?</description>
+    </item>
+    
+  </channel>
+</rss>

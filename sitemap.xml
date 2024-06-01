@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://matteo-gz.github.io/ai/</loc>
+  </url><url>
+    <loc>https://matteo-gz.github.io/ai/categories/</loc>
+  </url><url>
+    <loc>https://matteo-gz.github.io/ai/docs/</loc>
+  </url><url>
+    <loc>https://matteo-gz.github.io/ai/tags/</loc>
+  </url><url>
+    <loc>https://matteo-gz.github.io/ai/docs/basic/</loc>
+  </url><url>
+    <loc>https://matteo-gz.github.io/ai/docs/basic/start/</loc>
+  </url><url>
+    <loc>https://matteo-gz.github.io/ai/docs/basic/machine-learning/</loc>
+  </url><url>
+    <loc>https://matteo-gz.github.io/ai/docs/basic/deep-learning/</loc>
+  </url><url>
+    <loc>https://matteo-gz.github.io/ai/docs/basic/production/</loc>
+  </url><url>
+    <loc>https://matteo-gz.github.io/ai/docs/basic/neural-network/</loc>
+  </url><url>
+    <loc>https://matteo-gz.github.io/ai/docs/basic/bird-model/</loc>
+  </url>
+</urlset>
