@@ -30,9 +30,15 @@ AI的应用范围非常的广泛
   - 文本转语音
 
 ## 目前使用资料
-  - https://course.fast.ai/
+  - https://course.fast.ai/ 课程
   - https://github.com/fastai/fastbook a book: Deep Learning for Coders with Fastai and PyTorch: AI Applications Without a PhD
   - https://www.kaggle.com/jhoward 这个是文中的代码来源.
+  - https://aiquizzes.com/learn 问答学习网站
+
+### 第一节课
+  - https://forums.fast.ai/c/p1v5/54 2022年课程论坛
+  - https://forums.fast.ai/t/lesson-1-official-topic/95287 第一节课的主题
+  - https://forums.fast.ai/t/fastbook-chapter-1-questionnaire-solutions-wiki/65647 第一节的问答
 
 ## AI的特征
   - 自学,通过任意的神经网络,我们不需要自己去手写代码
